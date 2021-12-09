@@ -8,6 +8,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 import { CadastroEmpreededorComponent } from './cadastro-empreededor/cadastro-empreededor.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CadastroEmpreededorComponent } from './cadastro-empreededor/cadastro-em
     
     CadastroClienteComponent,
     CadastroEmpreededorComponent,
+    InicioComponent,
     
   ],
   imports: [
