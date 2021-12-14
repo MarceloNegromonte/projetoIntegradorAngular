@@ -8,6 +8,6 @@ export class Categoria{
     public cosmetico: string;
     public utilitarios: string;
     public formaPagamento: string;
-    public produto: Produto;
+    public produto: Produto[];
 
 }
