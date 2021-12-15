@@ -25,16 +25,16 @@ export class CategoriaComponent implements OnInit {
       this.router.navigate(["/produto"])
     }
     
-    //ERROR
-    //this.findAllCategoria()
+    
+    this.findAllCategoria()
   }
 
-  //ERROR
-  /*findAllCategoria(){
+  
+  findAllCategoria(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
       this.listaCategoria = resp
     })
-  }*/
+  }
 
   
 

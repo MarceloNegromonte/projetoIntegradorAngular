@@ -17,8 +17,8 @@ export class CategoriaService {
     headers: new HttpHeaders().set("Authorization", environment.token)
   }
 
-  getAllCategoria(): Observable<Categoria>{
-    return this.http.get<Categoria>("https://artemanha.herokuapp.com/categoria")
+  getAllCategoria(): Observable<Categoria[]>{
+    return this.http.get<Categoria[]>("https://artemanha.herokuapp.com/categoria")
   }
 
   getByIdCategoria(id: number): Observable<Categoria>{
