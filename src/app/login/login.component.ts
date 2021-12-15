@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit()  {
     window.scroll(0,0)
-    if(environment.token == ""){
-      this.router.navigate(["/login"])
-    }
+    
 
   }
 
@@ -38,7 +36,7 @@ export class LoginComponent implements OnInit {
       environment.id = this.usuarioLogin.id
 
 
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/produto'])
     }, erro =>{
       if (erro.status == 500){
         alert('Usuario ou senha estão incorretos!')

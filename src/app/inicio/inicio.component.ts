@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { threadId } from 'worker_threads';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
@@ -43,8 +42,7 @@ export class InicioComponent implements OnInit {
 
     this.authService.refreshToken()
     this.getAllProdutos()
-    //ERROR
-    //this.getAllCategorias()
+    this.getAllCategorias()
 
     
   }
@@ -62,12 +60,12 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  //ERROR
-  /*getAllCategorias(){
+  
+  getAllCategorias(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
       this.listaCategoria = resp
     })
-  }*/
+  }
 
   findByIdCategoria(){
     this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria)=>{
