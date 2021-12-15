@@ -9,6 +9,7 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
   
   usuarioLogin: UsuarioLogin = new UsuarioLogin()
@@ -21,6 +22,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit()  {
     window.scroll(0,0)
+    if(environment.token == ""){
+      this.router.navigate(["/login"])
+    }
 
   }
 
@@ -32,6 +36,7 @@ export class LoginComponent implements OnInit {
       environment.nome = this.usuarioLogin.nome
       environment.foto = this.usuarioLogin.foto
       environment.id = this.usuarioLogin.id
+
 
       this.router.navigate(['/inicio'])
     }, erro =>{
