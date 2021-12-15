@@ -5,7 +5,6 @@ export class Produto{
     
     public id: number;
     public nome: string;
-    public codigo: string;
     public preco: number;
     public quantidade: string;
     public categoria: Categoria[];
