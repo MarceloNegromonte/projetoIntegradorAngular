@@ -12,21 +12,26 @@ import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.co
 import { InicioComponent } from './inicio/inicio.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    
     RodapeComponent,
-    
     LoginComponent,
-    
     CadastroClienteComponent,
     InicioComponent,
     ProdutoComponent,
     CategoriaComponent,
+    ProdutoEditComponent,
+    ProdutoDeleteComponent,
+    CarrinhoComponent,
+
     
   ],
   imports: [
