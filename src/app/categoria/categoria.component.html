@@ -1,1 +1,94 @@
-<p>a gente n faz ideia do que faz aqui | EU QUERIA CHORAR | JA CHOREI</p>
+<div class="container-fluid">
+  <div class="container">
+    <div id="cadCategoria">
+      <h1>Categorias</h1>
+      <form>
+        <label for="categoria">Categoria:</label>
+        <input
+          type="text"
+          name="categoria"
+          id="categoria"
+          placeholder="Digite a categoria"
+          class="form-control"
+          [(ngModel)]="categoria.categoria"
+        />
+
+        <button class="btn btn-dark" (click)="cadastrarCategoria()">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+
+    <div id="cadProduto">
+      <h1>Cadastrar Produtos</h1>
+      <form>
+        <div>
+          <label for="nome">Nome do produto:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nome"
+            id="nome"
+            [(ngModel)]="produto.nome"
+          />
+        </div>
+        <div>
+          <label for="imagem">Foto do produto</label>
+          <input
+            type="text"
+            class="form-control"
+            name="imagemProduto"
+            id="imagemProduto"
+            [(ngModel)]="produto.imagemProduto"
+          />
+        </div>
+        <div>
+          <label for="preco">Preço</label>
+          <input
+            type="number"
+            class="form-control"
+            name="preco"
+            id="preco"
+            [(ngModel)]="produto.preco"
+          />
+        </div>
+        <div>
+          <label for="avaliacao">descricao</label>
+          <input
+            type="text"
+            class="form-control"
+            name="avaliacao"
+            id="avaliacao"
+            [(ngModel)]="produto.avaliacaoProduto"
+          />
+        </div>
+        <div>
+          <label for="quantidade">Quantidade</label>
+          <input
+            type="number"
+            class="form-control"
+            name="quantidade"
+            id="quantidade"
+            [(ngModel)]="produto.quantidade"
+          />
+        </div>
+        <div>
+          <select
+            name="categorias"
+            id="categorias"
+            [(ngModel)]="idcat"
+            (change)="findCategoriaById()"
+          >
+            <option *ngFor="let cat of listaCategoria" value="{{ cat.id }}">
+              {{ cat.categoria }}
+            </option>
+          </select>
+        </div>
+
+        <button class="btn btn-dark" (click)="cadastrarProduto()">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
