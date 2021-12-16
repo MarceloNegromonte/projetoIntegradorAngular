@@ -15,7 +15,7 @@ import { ProdutoService } from '../service/produto.service';
 export class CategoriaComponent implements OnInit {
   categoria: Categoria = new Categoria();
   listaCategoria: Categoria[];
-  idcat: number;
+  idCat: number;
 
   produto: Produto = new Produto();
 
@@ -28,10 +28,6 @@ export class CategoriaComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    if (environment.token == '') {
-      this.router.navigate(['/produto']);
-    }
-
     this.findAllCategoria();
   }
 
@@ -43,7 +39,7 @@ export class CategoriaComponent implements OnInit {
 
   findCategoriaById() {
     this.categoriaService
-      .getByIdCategoria(this.idcat)
+      .getByIdCategoria(this.idCat)
       .subscribe((resp: Categoria) => {
         this.categoria = resp;
       });
@@ -60,13 +56,14 @@ export class CategoriaComponent implements OnInit {
   }
 
   cadastrarProduto() {
-    this.categoria.id = this.idcat;
+    this.categoria.id = this.idCat;
     this.produto.categoria = this.categoria;
 
     this.usuario.id = environment.id;
     this.produto.usuario = this.usuario;
 
     console.log(this.produto);
+
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
       alert('produto cadastrado');
