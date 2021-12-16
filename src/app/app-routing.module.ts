@@ -7,7 +7,6 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { ProdutoComponent } from './produto/produto.component';
-import { ProdutoService } from './service/produto.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },

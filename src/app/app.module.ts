@@ -17,15 +17,13 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    
     RodapeComponent,
-    
     LoginComponent,
-    
     CadastroClienteComponent,
     InicioComponent,
     ProdutoComponent,
@@ -33,6 +31,7 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     ProdutoEditComponent,
     ProdutoDeleteComponent,
     CarrinhoComponent,
+
     
   ],
   imports: [
