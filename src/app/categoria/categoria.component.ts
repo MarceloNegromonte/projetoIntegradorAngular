@@ -8,7 +8,6 @@ import { Usuario } from '../model/Usuario';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
-
 @Component({
   selector: 'app-categoria',
   templateUrl: './categoria.component.html',
@@ -30,6 +29,8 @@ export class CategoriaComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.categoriaService.refreshToken();
+    this.produtoService.refreshToken();
     this.findAllCategoria();
   }
 
