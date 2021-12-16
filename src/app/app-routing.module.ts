@@ -10,6 +10,7 @@ import { ProdutoComponent } from './produto/produto.component';
 import { ProdutoService } from './service/produto.service';
 
 const routes: Routes = [
+
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroClienteComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'categoria', component: CategoriaComponent },
   { path: 'produto-edit/:id', component: ProdutoEditComponent },
   { path: 'produto-delete/:id', component: ProdutoDeleteComponent },
+
 ];
 
 @NgModule({
