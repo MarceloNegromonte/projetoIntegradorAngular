@@ -7,46 +7,30 @@ import { ProdutoService } from '../service/produto.service';
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
-  styleUrls: ['./produto.component.css']
+  styleUrls: ['./produto.component.css'],
 })
 export class ProdutoComponent implements OnInit {
+  produto: Produto = new Produto();
+  listaProdutos: Produto[];
 
-  produto: Produto = new Produto()
-  listaProdutos: Produto[]
+  constructor(private router: Router, private produtoService: ProdutoService) {}
 
-  
-  constructor(
-    
-    private router: Router,
-    private produtoService: ProdutoService
-
-    ) { }
-
-  ngOnInit(){
-    
-    if(environment.token == ""){
-      this.router.navigate(["/categoria"])
-    }
-
-    this.findAllProdutos()
+  ngOnInit() {
+    this.findAllProdutos();
   }
 
-  findAllProdutos(){
-    this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
-      this.listaProdutos = resp
-    })
+  findAllProdutos() {
+    this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp;
+    });
   }
 
-  cadastraProdutos(){
-    this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
-      this.produto = resp
-      alert("Cadastrasse o tema foi, fi da febi? parabéns murrinha!")
-      this.findAllProdutos()
-      this.produto = new Produto()
-    })
-
+  cadastraProdutos() {
+    this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
+      this.produto = resp;
+      alert('Cadastrasse o tema foi, fi da febi? parabéns murrinha!');
+      this.findAllProdutos();
+      this.produto = new Produto();
+    });
   }
-
-
-
 }
