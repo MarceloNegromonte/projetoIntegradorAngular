@@ -6,7 +6,7 @@ export class Produto {
   public nome: string;
   public preco: number;
   public quantidade: number;
-  public avalicaoProduto: string;
+  public avaliacaoProduto: string;
   public imagemProduto: string;
   public categoria: Categoria;
   public usuario: Usuario;

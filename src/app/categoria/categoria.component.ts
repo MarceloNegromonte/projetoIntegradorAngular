@@ -28,6 +28,8 @@ export class CategoriaComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.categoriaService.refreshToken();
+    this.produtoService.refreshToken();
     this.findAllCategoria();
   }
 
