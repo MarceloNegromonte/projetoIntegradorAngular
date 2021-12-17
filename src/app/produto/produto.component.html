@@ -43,9 +43,30 @@
               {{ produto.avaliacaoProduto }}
             </p>
             <small>Valor: {{ produto.preco | currency: "BRL" }}</small>
+
+            <button (click)='getProdutoById(produto.id)'>Comprar</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <button routerLink='/carrinho'>Carrinho</button>
+  <div class="row">
+    <div class="col-sm-3" *ngFor='let produto of listaProdutos'>
+      <div class="card text-center">
+          <img class="card-img-top" src="{{produto.imagemProduto}}" alt="Imagem de capa do card">
+          <div class="card-body">
+              <h3><a href="#">{{ produto.nome }}</a></h3>
+              <div class="text-center">
+                  {{ produto.preco | currency: "BRL" }}
+              </div>
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent"></div>
+              <p class="card-text text-center">{{ produto.avaliacaoProduto }}</p>
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent"></div>
+              <div class="text-center"><a href="#" class="btn btn-primary">Carrinho</a></div>
+          </div>
+      </div>
+  </div>
   </div>
 </div>

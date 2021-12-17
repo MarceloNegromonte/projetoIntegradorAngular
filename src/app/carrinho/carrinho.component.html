@@ -1,10 +1,10 @@
-<!-- <div class="container-fluid my-4">
+<div class="container-fluid my-4">
   <div class="container">
     <div class="row">
       <h3 class="text-danger">Minhas compras</h3>
     </div>
-    <div class="row d-flex align-items-center">
-      <div class="col-9">
+    <div class="row d-flex align-items-center justify-content-between">
+      <div class="col-7">
         <div
           class="row border rounded border-dark p-0 mb-3"
           *ngFor="let item of listaCompras"
@@ -15,7 +15,7 @@
           <div class="col-7">
             <div class="row">
               <h5 class="">{{ item.nome }}</h5>
-              <p>Plataforma: {{ item.categoria.tipo }}</p>
+              <p>Plataforma: {{ item.categoria.categoria }}</p>
               <p class="m-0">Publisher: Ubisoft</p>
             </div>
           </div>
@@ -48,4 +48,4 @@
       </div>
     </div>
   </div>
-</div> -->
+</div> 
