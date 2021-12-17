@@ -64,7 +64,7 @@
           <select
             name="categorias"
             id="categorias"
-            [(ngModel)]="idcat"
+            [(ngModel)]="idCategoria"
             (change)="findCategoriaById()"
           >
             <option *ngFor="let cat of listaCategoria" value="{{ cat.id }}">

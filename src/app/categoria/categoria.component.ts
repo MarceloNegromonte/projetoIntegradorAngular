@@ -19,6 +19,7 @@ export class CategoriaComponent implements OnInit {
   idCat: number;
 
   produto: Produto = new Produto();
+  listaProdutos: Produto[]
 
   usuario: Usuario = new Usuario();
 
@@ -32,6 +33,7 @@ export class CategoriaComponent implements OnInit {
     this.categoriaService.refreshToken();
     this.produtoService.refreshToken();
     this.findAllCategoria();
+    this.getAllProdutos()
   }
 
   findAllCategoria() {
@@ -56,6 +58,12 @@ export class CategoriaComponent implements OnInit {
         alert('categoria criada');
         this.categoria = new Categoria();
       });
+  }
+
+  getAllProdutos(){
+    this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
+      this.listaProdutos = resp
+    })
   }
 
   cadastrarProduto() {

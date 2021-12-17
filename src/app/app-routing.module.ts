@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'categoria', component: CategoriaComponent },
   { path: 'produto-edit/:id', component: ProdutoEditComponent },
   { path: 'produto-delete/:id', component: ProdutoDeleteComponent },
+  
 ];
 
 @NgModule({

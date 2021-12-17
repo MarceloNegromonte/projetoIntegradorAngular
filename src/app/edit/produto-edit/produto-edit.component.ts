@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { Produto } from 'src/app/model/Produto';
+import { Usuario } from 'src/app/model/Usuario';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
@@ -16,9 +17,11 @@ export class ProdutoEditComponent implements OnInit {
   categoria: Categoria = new Categoria();
   idCategoria: number;
 
-  idcat: number;
 
   produto: Produto = new Produto();
+
+  idUser = environment.id
+  usuario: Usuario = new Usuario()
 
   constructor(
     private router: Router,
@@ -47,7 +50,7 @@ export class ProdutoEditComponent implements OnInit {
 
   findCategoriaById() {
     this.categoriaService
-      .getByIdCategoria(this.idcat)
+      .getByIdCategoria(this.idCategoria)
       .subscribe((resp: Categoria) => {
         this.categoria = resp;
       });
@@ -62,6 +65,11 @@ export class ProdutoEditComponent implements OnInit {
   atualizar() {
     this.categoria.id = this.idCategoria;
     this.produto.categoria = this.categoria;
+
+    this.usuario.id = this.idUser
+    this.produto.usuario = this.usuario
+
+    console.log(this.produto)
 
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
