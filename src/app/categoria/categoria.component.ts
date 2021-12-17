@@ -23,6 +23,8 @@ export class CategoriaComponent implements OnInit {
 
   usuario: Usuario = new Usuario();
 
+  idCategoria: number
+
   constructor(
     private router: Router,
     private categoriaService: CategoriaService,

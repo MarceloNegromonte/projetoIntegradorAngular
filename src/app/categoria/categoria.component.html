@@ -114,7 +114,7 @@
         <td>{{produto.categoria.categoria}}</td>
         <td>
           <button [routerLink]="['/produto-edit', produto.id]">Editar</button>
-          <button>Apagar</button>
+          <button [routerLink]="['/produto-delete', categoria.id]">Apagar</button>
         </td>
       </tr>
       
