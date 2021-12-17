@@ -15,9 +15,9 @@ export class ProdutoDeleteComponent implements OnInit {
   produto: Produto = new Produto();
   categoria: Categoria = new Categoria();
 
-  listaProduto: Produto[]
+  listaProduto: Produto[];
 
-  idProd: number;
+  idProduto: number;
   idCategoria: number;
 
   constructor(
@@ -31,13 +31,13 @@ export class ProdutoDeleteComponent implements OnInit {
     window.scroll(0, 0);
 
     if (environment.token == '') {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/inicio']);
     }
 
-    let id = this.route.snapshot.params['id'];
-    
-    this.findByIdProduto(id);
-    this.findByIdCategoria(this.idCategoria)
+    this.idProduto = this.route.snapshot.params['id'];
+
+    this.findByIdProduto(this.idProduto);
+    this.findByIdCategoria(this.idCategoria);
   }
 
   findByIdProduto(id: number) {
@@ -47,26 +47,22 @@ export class ProdutoDeleteComponent implements OnInit {
   }
 
   apagarProduto() {
-    this.produto.id = this.idProd
-
-
-    this.produtoService.deleteProduto(this.idProd).subscribe(() => {
+    this.produtoService.deleteProduto(this.idProduto).subscribe(() => {
       alert('Produto apagado com sucesso!');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/categoria']);
     });
   }
 
-  findByIdCategoria(id: number){
-    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria)=> {
+  findByIdCategoria(id: number) {
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria) => {
       this.categoria = resp;
-    })
+    });
   }
 
-  apagarCategoria(){
-    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=> {
-      alert('Categoria apagada com sucesso!')
-      this.router.navigate(['/produto'])
-    })
+  apagarCategoria() {
+    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(() => {
+      alert('Categoria apagada com sucesso!');
+      this.router.navigate(['/produto']);
+    });
   }
-
 }
