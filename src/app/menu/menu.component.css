@@ -1,13 +1,13 @@
 .bg-color{
-    background-color: #E8D5C5;
+    background-color: #331919;
 }
 
 
-.btn-outline-bege {
+/* .btn-outline-bege {
     border: solid #CA946E;
     border-radius: 10px;
     background-color: white;
-    color: black;
+    color: rgb(0, 0, 0);
     padding: 4px 15px;
     font-size: 16px;
     cursor: pointer;
@@ -18,13 +18,13 @@
   .btn-outline-bege:hover {
     background-color: #CA946E;
     color: white;
-  }
+  } */
 
-  .input-style{
+  /* .input-style{
       color: white;
       border-radius: 10px;
       border-color:#CA946E ;
-  }
+  } */
 
   .fonte-size-18{
       font-size: 18pt;
@@ -35,7 +35,5 @@
   }
 
   .bg-color-art{
-      color: #805434;
+      color: #fffdfb;
   }
-
-  
