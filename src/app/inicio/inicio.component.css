@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 .paleta-cores {
 
     color: #fff2e6;
@@ -31,6 +33,10 @@
   .content{
     color: #331919;
     font-size: 18px;
+  }
+
+  h1 {
+    font-family: 'Amatic+SC', cursive;
   }
   
   /*--------------------------------------------------------------
@@ -217,7 +223,7 @@
     --------------------------------------------------------------*/
   .why-us .content {
     padding: 30px;
-    background: #cf5f5f;
+    background: #331919;
     border-radius: 4px;
     color: #fff;
   }
