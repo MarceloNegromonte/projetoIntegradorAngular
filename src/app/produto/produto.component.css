@@ -1,9 +1,12 @@
-.cor-buttom{
-    background-color: #e8d5c5;
+.cor-buttom {
+  background-color: #e8d5c5;
 }
 
-.cor-de-fundo{
-    background-color: #e8d5c5;
-
+.cor-de-fundo {
+  background-color: #e8d5c5;
 }
 
+#carrinho {
+  background-color: burlywood;
+  border-radius: 10px;
+}
