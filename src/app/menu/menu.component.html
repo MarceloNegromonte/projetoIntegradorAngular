@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-color">
-  <a class="navbar-brand fonte-size-18 bg-color-art" href="#"> <img width="60px" height="60px" src="../../assets/logotipomini.png" alt=""> ArteManha</a>
+  <a id="fonte" class="navbar-brand fonte-size-18 bg-color-art" href="#"> <img width="60px" height="60px" src="../../assets/logotipomini (2).png" alt=""> ArteManha</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -13,22 +13,24 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto mr-4">
+    <ul class="navbar-nav ml-auto mr-4 ">
       <li class="nav-item">
-        <a routerLink="/produto" class="nav-link text-white">Produtos</a>
+        <a routerLink="/produto"  class="nav-link text-white bg-color-art ">Produtos</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/categoria" class="nav-link text-white">Categorias</a>
+        <a routerLink="/categoria" class="nav-link text-white" *ngIf='auth.colaborador()'>Categorias</a>
       </li>
       <li class="nav-item dropdown" *ngIf="!auth.logado()">
         <a
-          class="nav-link dropdown-toggle text-white"
+          class="nav-link dropdown-toggle text-white "
           href="#"
           id="navbarDropdown"
           role="button"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
+          *ngIf='!auth.logado()'
+        
         >
           Entrar
         </a>
@@ -39,10 +41,9 @@
       </li>
 
       <li class="nav-item ">
-        <small>
-          <a href="" (click)="sair()" class="nav-link text-white">Sair</a>
-        </small>
-     
+          <a href="" (click)="sair()" *ngIf='auth.logado()' class="nav-link text-white">Sair</a>
+        </li>
+
       <!-- <li class="nav-item">
         <small><a href="" (click)="sair()">Sair</a></small>
       </li>  -->

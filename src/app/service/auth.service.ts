@@ -46,6 +46,14 @@ export class AuthService {
     
         return ok
   }
+
+  colaborador(){
+    let ok: boolean = false
+    if(environment.tipo === 'colaborador'){
+      ok = true
+    }
+    return ok
+  }
     
   
 

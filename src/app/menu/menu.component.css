@@ -1,30 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+
 .bg-color{
-    background-color: #331919;
+    background-color: #ca946e;
 }
 
-
-/* .btn-outline-bege {
-    border: solid #CA946E;
-    border-radius: 10px;
-    background-color: white;
-    color: rgb(0, 0, 0);
-    padding: 4px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border-color: #CA946E;
-    color: #CA946E;
-  }
-  
-  .btn-outline-bege:hover {
-    background-color: #CA946E;
-    color: white;
-  } */
-
-  /* .input-style{
-      color: white;
-      border-radius: 10px;
-      border-color:#CA946E ;
-  } */
+#fonte{
+    font-family: "Amatic SC", cursive;
+    font-size: 30px;
+    color: #FDF5E9;
+}
 
   .fonte-size-18{
       font-size: 18pt;
@@ -35,5 +19,5 @@
   }
 
   .bg-color-art{
-      color: #fffdfb;
+      color: #FDF5E9;
   }
