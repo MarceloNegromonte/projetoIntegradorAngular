@@ -1,124 +1,114 @@
-
 <div class="container-fluid">
-  <div class="container">
-    <div id="cadCategoria">
-      <h1>Categorias</h1>
-      <form>
-        <label for="categoria">Categoria:</label>
-        <input
-          type="text"
-          name="categoria"
-          id="categoria"
-          placeholder="Digite a categoria"
-          class="form-control"
-          [(ngModel)]="categoria.categoria"
-        />
 
-        <button class="btn btn-dark" (click)="cadastrarCategoria()">
-          Cadastrar
-        </button>
-      </form>
+  <div class="row d-flex justify-content-center mt-5 mb-5 cor-texto">
+    <div class="col-md-12">
+      <div class="col-10 mt-4 ml-5">
+        <div class="container">
+        <div id="cadCategoria">
+          <h1>Categorias</h1><br>
+          <form>
+            <label for="categoria">Categoria:</label>
+            <input type="text" name="categoria" id="categoria" placeholder="Digite a categoria" class="form-control"
+              [(ngModel)]="categoria.categoria" />
+              <br>
+
+            <button id="botaocate" class="btn text-white" (click)="cadastrarCategoria()">
+              Cadastrar
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
+      </div>
+
+
+      
+
+
+
+
 
     <!--Cadastrar-->
-    <div id="cadProduto">
-      <h1>Cadastrar Produtos</h1>
-      <form>
-        <div>
-          <label for="nome">Nome do produto:</label>
-          <input
-            type="text"
-            class="form-control"
-            name="nome"
-            id="nome"
-            [(ngModel)]="produto.nome"
-          />
-        </div>
-        <div>
-          <label for="imagem">Foto do produto</label>
-          <input
-            type="text"
-            class="form-control"
-            name="imagemProduto"
-            id="imagemProduto"
-            [(ngModel)]="produto.imagemProduto"
-          />
-        </div>
-        <div>
-          <label for="preco">Preço</label>
-          <input
-            type="number"
-            class="form-control"
-            name="preco"
-            id="preco"
-            [(ngModel)]="produto.preco"
-          />
-        </div>
-        <div>
-          <label for="avaliacao">descricao</label>
-          <input
-            type="text"
-            class="form-control"
-            name="avaliacao"
-            id="avaliacao"
-            [(ngModel)]="produto.avaliacaoProduto"
-          />
-        </div>
-        <div>
-          <label for="quantidade">Quantidade</label>
-          <input
-            type="number"
-            class="form-control"
-            name="quantidade"
-            id="quantidade"
-            [(ngModel)]="produto.quantidade"
-          />
-        </div>
-        <div>
-          <select
-            name="categorias"
-            id="categorias"
-            [(ngModel)]="idCat"
-            (change)="findCategoriaById()"
-          >
-            <option *ngFor="let cat of listaCategoria" value="{{ cat.id }}">
-              {{ cat.categoria }}
-            </option>
-          </select>
-        </div>
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center mt-5 mb-5 cor-texto">
 
-        <button class="btn btn-dark" (click)="cadastrarProduto()">
-          Cadastrar
-        </button>
-      </form>
+        <div id="cadProduto">
+          <h1>Cadastrar Produtos</h1><br>
+          <form>
+            <div>
+              <label for="nome">Nome do produto:</label>
+              <input type="text" class="form-control" name="nome" id="nome" [(ngModel)]="produto.nome" />
+            </div>
+            <div>
+              <label for="imagem">Foto do produto:</label>
+              <input type="text" class="form-control" name="imagemProduto" id="imagemProduto"
+                [(ngModel)]="produto.imagemProduto" />
+            </div>
+            <div>
+              <label for="preco">Preço:</label>
+              <input type="number" class="form-control" name="preco" id="preco" [(ngModel)]="produto.preco" />
+            </div>
+            <div>
+              <label for="avaliacao">Descricao:</label>
+              <input type="text" class="form-control" name="avaliacao" id="avaliacao"
+                [(ngModel)]="produto.avaliacaoProduto" />
+            </div>
+            <div>
+              <label for="quantidade">Quantidade:</label>
+              <input type="number" class="form-control" name="quantidade" id="quantidade"
+                [(ngModel)]="produto.quantidade" />
+            </div>
+            <div>
+              <select name="categorias" id="categorias" [(ngModel)]="idCat" (change)="findCategoriaById()">
+                <option *ngFor="let cat of listaCategoria" value="{{ cat.id }}">
+                  {{ cat.categoria }}
+                </option>
+              </select>
+            </div>
+            <br>
+
+            <button id="botaocate" class="btn text-white" (click)="cadastrarProduto()">
+              Cadastrar
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="col-10 d-flex justify-content-center mt-4">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Produto</th>
-        <th scope="col">Preço</th>
-        <th scope="col">Categoria</th>
-        <th scope="col">Opções</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor='let produto of listaProdutos'>
-        <th scope="row">{{produto.id}}</th>
-        <td>{{produto.nome}}</td>
-        <td>{{produto.preco}}</td>
-        <td>{{produto.categoria.categoria}}</td>
-        <td>
-          <button [routerLink]="['/produto-edit', produto.id]">Editar</button>
-          <button [routerLink]="['/produto-delete', produto.id]">Apagar</button>
-        </td>
-      </tr>
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center mb-5">
       
-    </tbody>
-  </table>
-</div>
+      <div class="col-10  mt-4 cor-texto">
+        <h1>Cadastrar Produtos</h1><br>
+        <table class="table cor-texto">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Produto</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let produto of listaProdutos'>
+              <th scope="row">{{produto.id}}</th>
+              <td>{{produto.nome}}</td>
+              <td>{{produto.preco}}</td>
+              <td>{{produto.categoria.categoria}}</td>
+              <td>
+                <button [routerLink]="['/produto-edit', produto.id]" id="botaocate" class="btn text-white mr-2">Editar</button>
+                <button [routerLink]="['/produto-delete', produto.id]" id="botaocate" class="btn text-white">Apagar</button>
+              </td>
+            </tr>
 
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
