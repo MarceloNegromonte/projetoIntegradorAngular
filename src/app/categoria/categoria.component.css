@@ -1,0 +1,25 @@
+.paleta-cores {
+    color: #fff2e6;
+    color: #e8d5c5;
+    color: #ca946e;
+    color: #f7a251;
+    color: #5e8068;
+    color: #404b43;
+  }
+
+  .cor-texto{
+    color: #b8784b;
+}
+
+.cor-buttom {
+    background-color: #ca946e;
+  }
+
+  .cor-buttom:hover{
+    background:#e8d5c5
+  }
+
+  #botaocate {
+    background-color: #ca946ece;
+    border-radius: 10px;
+  }

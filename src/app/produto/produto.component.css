@@ -1,0 +1,28 @@
+.cor-buttom {
+  background-color: #ca946e;
+}
+
+.cor-de-fundo {
+  background: #e8d5c5;
+}
+
+.cor-buttom:hover{
+  background:#e8d5c5
+}
+.cor-texto{
+  color: #ca946e;
+}
+#carrinho {
+  background-color: #ca946ece;
+  border-radius: 10px;
+}
+
+.nome{
+  text-transform: uppercase;
+}
+
+.linkMenu {
+  font-size: 1.5rem
+}
+
+

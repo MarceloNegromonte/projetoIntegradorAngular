@@ -1,0 +1,59 @@
+<div class="row d-flex justify-content-center" >
+  <div class="col-md-12 cor-de-fundo text-white d-flex justify-content-center py-3">
+    <div class="col-md-5 d-flex justify-content-around">
+      <a class="text-reset linkMenu" href=""> Moda </a>
+    <a class="text-reset linkMenu" href=""> Beleza</a>
+    <a class="text-reset linkMenu" href=""> Decoração </a>
+    <a class="text-reset linkMenu" href=""> Alimentício </a>
+    <a class="text-reset linkMenu" href=""> Utilitários </a>
+
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-5 ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row d-flex justify-content-center">
+          <div class="col-sm-3" *ngFor="let produto of listaProdutos">
+            <div class="card text-center">
+              <img
+                class="card-img-top"
+                src="{{ produto.imagemProduto }}"
+                alt="Imagem de capa do card de produto"
+              />
+              <div class="card-body">
+                <h3>
+                  <a href="#" class='nome cor-texto'>{{ produto.nome }}</a>
+                </h3>
+                <div class="text-center">
+                  {{ produto.preco | currency: "BRL" }}
+                </div>
+                <p class="card-text text-center">
+                  {{ produto.avaliacaoProduto }}
+                </p>
+                <div class="text-center">
+                  <a
+                    href="#"
+                    class="btn cor-buttom text-white"
+                    (click)="getProdutoById(produto.id)"
+                    routerLink="/carrinho"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row w-100 d-flex justify-content-center">
+        <div class=" mt-5">
+          <button id="carrinho" class="btn text-white mb-5" routerLink="/carrinho">
+            Conferir Carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
